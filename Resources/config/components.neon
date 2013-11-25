@@ -1,0 +1,16 @@
+services:
+
+	events.eventFormFactory:
+		class: EventsModule\Pages\Events\EventFormFactory
+		setup:
+			- injectFactory(@cms.admin.basicFormFactory)
+
+	events.pageFormFactory:
+		class: EventsModule\Pages\Events\PageFormFactory
+		setup:
+			- injectFactory(@cms.admin.basicFormFactory)
+
+factories:
+	events.tableControl:
+		class: EventsModule\Pages\Events\TableControl
+		tags: [component]
