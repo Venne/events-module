@@ -10,7 +10,19 @@ services:
 		setup:
 			- injectFactory(@cms.admin.basicFormFactory)
 
+	events.elements.eventsFormFactory:
+		class: EventsModule\Pages\Events\EventsElement\EventsFormFactory
+		setup:
+			- injectFactory(@cms.admin.ajaxFormFactory)
+
 factories:
 	events.tableControl:
 		class: EventsModule\Pages\Events\TableControl
 		tags: [component]
+
+	events.eventsElement:
+		class: EventsModule\Pages\Events\EventsElement\EventsElement
+		setup:
+			- injectEventsFormFactory
+			- injectRouteRepository
+		tags: [element: events]

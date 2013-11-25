@@ -8,3 +8,11 @@ Installation
 
 - Copy this folder to /app/modules
 - Active this module in administration
+
+
+Elements
+--------
+
+```php
+{element events 'current events'} // show blog history
+```
