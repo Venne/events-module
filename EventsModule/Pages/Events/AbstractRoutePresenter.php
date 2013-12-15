@@ -22,8 +22,11 @@ abstract class AbstractRoutePresenter extends \BlogModule\Pages\Blog\AbstractRou
 	 */
 	protected function getQueryBuilder()
 	{
+		$date = new \DateTime;
+		$date->setTime(0, 0, 0);
+
 		return parent::getQueryBuilder()
-			->andWhere('a.date >= :now')->setParameter('now', new \DateTime);
+			->andWhere('a.date >= :now')->setParameter('now', $date);
 	}
 
 }
