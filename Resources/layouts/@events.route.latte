@@ -13,7 +13,7 @@
 
 	{control pagination, config => [ variant => '@events.route' ]}
 	{var $qb = $control->getItemsBuilder()}
-	{var $qb = $presenter->archive ? $qb->orderBy('r.released', 'DESC') : $qb->orderBy('r.released', 'ASC')}
+	{var $qb = $presenter->archive ? $qb->orderBy('a.date', 'DESC') : $qb->orderBy('a.date', 'ASC')}
 	{control itemList $qb->getQuery()->getResult(), config => [ variant => '@events.route' ]}
 	{control pagination, config => [ variant => '@events.route' ]}
 {/cache}
